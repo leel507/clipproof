@@ -1,0 +1,26 @@
+{
+	"_hinweis": "Gemeinsame Testfälle für lib/Service/Timecode.php und src/lib/timecode.ts. frames ist die absolute Framezahl (Start-Timecode plus Index). Fälle mit quelle 'bild' sind am eingeblendeten Bild der erzeugten Prüfclips abgelesen (11.10.2026).",
+	"faelle": [
+		{ "num": 25, "den": 1, "df": false, "frames": 0, "tc": "00:00:00:00" },
+		{ "num": 25, "den": 1, "df": false, "frames": 1654, "tc": "00:01:06:04" },
+		{ "num": 25, "den": 1, "df": false, "frames": 1499, "tc": "00:00:59:24" },
+		{ "num": 25, "den": 1, "df": false, "frames": 90000, "tc": "01:00:00:00" },
+		{ "num": 24000, "den": 1001, "df": false, "frames": 86400, "tc": "01:00:00:00" },
+		{ "num": 24000, "den": 1001, "df": false, "frames": 23, "tc": "00:00:00:23" },
+		{ "num": 30000, "den": 1001, "df": false, "frames": 1800, "tc": "00:01:00:00" },
+		{ "num": 30, "den": 1, "df": false, "frames": 1119, "tc": "00:00:37:09" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 0, "tc": "00:00:00;00" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 1799, "tc": "00:00:59;29" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 1800, "tc": "00:01:00;02" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 17982, "tc": "00:10:00;00" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 17981, "tc": "00:09:59;29" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 107892, "tc": "01:00:00;00" },
+		{ "num": 30000, "den": 1001, "df": true, "frames": 109690, "tc": "01:00:59;28", "quelle": "bild" },
+		{ "num": 60000, "den": 1001, "df": true, "frames": 3599, "tc": "00:00:59;59" },
+		{ "num": 60000, "den": 1001, "df": true, "frames": 3600, "tc": "00:01:00;04" },
+		{ "num": 60000, "den": 1001, "df": true, "frames": 35964, "tc": "00:10:00;00" },
+		{ "num": 60000, "den": 1001, "df": true, "frames": 215784, "tc": "01:00:00;00" },
+		{ "num": 60000, "den": 1001, "df": true, "frames": 216429, "tc": "01:00:10;45" },
+		{ "num": 60000, "den": 1001, "df": true, "frames": 219380, "tc": "01:00:59;56", "quelle": "bild" }
+	]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+	Verträglichkeitsprüfung gegen PHP 8.3 (kleinste unterstützte Fassung).
+	Findet auch Funktionen, die es erst ab PHP 8.4 gibt, was php -l nicht kann.
+-->
+<ruleset name="clipproof-php83">
+	<file>lib</file>
+	<arg name="extensions" value="php"/>
+	<arg value="sp"/>
+	<config name="testVersion" value="8.3-"/>
+	<rule ref="PHPCompatibility"/>
+</ruleset>

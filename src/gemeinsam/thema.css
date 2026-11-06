@@ -1,0 +1,110 @@
+/*!
+ * SPDX-FileCopyrightText: 2026 Schauties Media
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+/*
+ * Gestaltung des Players: dunkel und neutral, Aufbau
+ * wie Frame.io. Eine Akzentfarbe, Timecodes in Gelb.
+ *
+ * Schrift: Archivo, Titel breit (font-stretch 125 %). Alles Kleine in Archivo, Gewicht
+ * 400 bis 500, nie unter 12 px, Nebentexte grau statt dünn (lesbar auf
+ * Dunkel). Zahlen gleich breit (tabular-nums).
+ */
+.vr-thema {
+	--vr-grund: #0c0e11;
+	--vr-buehne: #000;
+	--vr-flaeche: #15181c;
+	--vr-flaeche-2: #1c2026;
+	--vr-flaeche-3: #252a31;
+	--vr-linie: #2a3038;
+	--vr-text: #eef1f4;
+	--vr-text-2: #b9c1ca;
+	--vr-text-3: #8d96a1;
+	--vr-akzent: #2ea7f0;
+	--vr-akzent-hover: #4fb6f4;
+	--vr-akzent-tief: #1b7fbd;
+	--vr-tc: #ffc94a;
+	--vr-tc-grund: rgba(255, 201, 74, .12);
+	--vr-fehler: #ff6b6b;
+	--vr-ok: #3ccf8e;
+	--vr-radius: 10px;
+	--vr-radius-klein: 6px;
+	--vr-schrift: "Archivo VR", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--vr-titel: "Archivo VR", system-ui, sans-serif;
+	--vr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+	--vr-schnell: 150ms;
+	--vr-mittel: 250ms;
+
+	color: var(--vr-text);
+	font-family: var(--vr-schrift);
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	font-variant-numeric: tabular-nums;
+}
+.vr-thema *,
+.vr-thema *::before,
+.vr-thema *::after {
+	box-sizing: border-box;
+}
+.vr-thema button,
+.vr-thema input,
+.vr-thema textarea,
+.vr-thema select {
+	font: inherit;
+	color: inherit;
+	margin: 0;
+}
+.vr-thema button {
+	cursor: pointer;
+	/* Nextcloud gibt Knöpfen eine Mindesthöhe und einen Rand; hier nicht. */
+	min-height: 0;
+	min-width: 0;
+	box-shadow: none;
+}
+.vr-thema :focus-visible {
+	outline: 2px solid var(--vr-akzent);
+	outline-offset: 2px;
+}
+/* Symbolknopf: quadratisch, leise, deutlich bei Hover. */
+.vr-thema .vr-ik {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	border-radius: var(--vr-radius-klein);
+	background: transparent;
+	color: var(--vr-text-2);
+	font-size: 18px;
+	transition: background var(--vr-schnell) var(--vr-ease), color var(--vr-schnell) var(--vr-ease);
+}
+.vr-thema .vr-ik:hover {
+	background: var(--vr-flaeche-3);
+	color: var(--vr-text);
+}
+.vr-thema .vr-ik[aria-pressed="true"] {
+	background: rgba(46, 167, 240, .16);
+	color: var(--vr-akzent);
+}
+.vr-thema .vr-ik:disabled {
+	opacity: .35;
+	cursor: default;
+	background: transparent;
+}
+.vr-thema .vr-tc {
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: "tnum";
+	letter-spacing: .01em;
+}
+@media (prefers-reduced-motion: reduce) {
+	.vr-thema *,
+	.vr-thema *::before,
+	.vr-thema *::after {
+		transition-duration: 1ms !important;
+		animation-duration: 1ms !important;
+	}
+}

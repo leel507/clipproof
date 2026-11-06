@@ -1,0 +1,27 @@
+# Zugangsdaten der lokalen Entwicklungsumgebung
+.env
+.env.*
+
+# Daten der lokalen Entwicklungs-Nextcloud
+.dev/
+
+# Testvideos gehören nicht ins Repository
+testdaten/
+
+# Gebautes Frontend (entsteht mit npm run build)
+/js/
+
+# Abhängigkeiten
+node_modules/
+vendor/
+
+# macOS
+.DS_Store
+
+# Pakete für den Einsatz (tools/paket.sh)
+/dist/
+vendor-design/
+
+# Firefox-Profil für Browsertests, nie committen
+/Firefox
+/firefox-profil/

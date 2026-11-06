@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Clipproof</title>
+	<link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+	<header class="kopf">
+		<strong>Clipproof</strong>
+		<button id="jetzt" type="button" class="knopf-klein" data-t="sync" data-t-title="syncTitle" title="Sync now">Sync</button>
+	</header>
+
+	<details id="einstellungen" class="einstellungen">
+		<summary data-t="access">Access</summary>
+		<label><span data-t="server">Server</span> <input id="server" type="url" placeholder="https://cloud.example.com"></label>
+		<label><span data-t="panelKey">Panel key</span> <input id="schluessel" type="password" autocomplete="off" data-t-placeholder="panelKeyHint" placeholder="from Clipproof, bottom left"></label>
+		<label><span data-t="language">Language</span>
+			<select id="sprache">
+				<option value="en">English</option>
+				<option value="de">Deutsch</option>
+			</select>
+		</label>
+		<button id="speichern" type="button" class="knopf" data-t="save">Save</button>
+		<p class="leise" data-t="keyNote">The key can only read your reviews and is stored in the macOS keychain. Create and revoke it in Clipproof, bottom left under “Premiere panel”.</p>
+	</details>
+
+	<section class="sequenz">
+		<div class="zeile"><span class="leise" data-t="sequence">Sequence</span> <span id="sequenz">none</span></div>
+		<div id="zuordnung" hidden>
+			<label><span data-t="review">Review</span> <select id="review"></select></label>
+			<div class="zwei">
+				<label><span data-t="version">Version</span> <select id="version"></select></label>
+				<label data-t-title="offsetTitle" title="Frames by which the proxy is shifted in the sequence. 0 if the proxy is the whole sequence."><span data-t="offset">Offset</span> <input id="versatz" type="number" step="1" value="0"></label>
+			</div>
+		</div>
+	</section>
+
+	<p id="status" class="status" role="status" data-t="loading">Loading …</p>
+
+	<div id="vorschau" class="vorschau-block" hidden>
+		<div id="vorschau-rahmen" class="vorschau">
+			<video id="vorschau-video" muted playsinline preload="auto"></video>
+			<canvas id="vorschau-zeichnung"></canvas>
+		</div>
+		<p id="vorschau-titel" class="leise"></p>
+		<div class="vorschau-knoepfe">
+			<button id="vorschau-import" type="button" class="knopf-klein" data-t="importImage">Import as image</button>
+			<button id="vorschau-zu" type="button" class="knopf-klein" data-t="close">Close</button>
+		</div>
+	</div>
+
+	<ul id="liste" class="liste"></ul>
+
+	<script src="js/sprache.js"></script>
+	<script src="js/abgleich.js"></script>
+	<script src="js/panel.js"></script>
+</body>
+</html>
