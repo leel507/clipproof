@@ -6,16 +6,48 @@ Frame-accurate video review for Nextcloud. Your clients comment on a video in th
 
 ## Features
 
+### What your clients see
+
+![Client page: a comment with a drawing on the frame, timecode and the list of comments](docs/screenshots/client-review.png)
+
 - Review link per video with its own token, independent of Nextcloud shares.
 - Comments on a single frame or a range, with drawings on the frame.
 - Each comment is sent with Enter and reaches you right away, as a Nextcloud notification.
+- Clients see which comments you have handled and can reply.
+
+### What you see
+
+![Owner view: versions, comments marked as done, replies and the drawing on the frame](docs/screenshots/owner-view.png)
+
+- All reviews in one place, with versions, replies and a done state per comment.
 - Versions: upload a new edit, clients keep the same link.
 - Approve a review; the link expires a configurable number of days later and the review moves to a read-only archive.
-- Optional project folders: the newest video per file name group becomes a review or a new version; older files move to a subfolder, nothing is deleted or overwritten.
-- "Send for review" in the Files app (MP4 and MOV).
+
+![Export menu with EDL for Resolve, XML for Premiere and CSV](docs/screenshots/export-markers.png)
+
 - Export as EDL (DaVinci Resolve), FCP7 XML and CSV.
-- Optional panel for Premiere Pro that places comments as sequence markers.
+
+### In the Files app
+
+![Files app: Release for review on a video, suggesting a new version of an existing review](docs/screenshots/files-release.png)
+
+- "Release for review" in the Files app (MP4 and MOV) suggests a new version of a matching review or a new review.
+- Optional project folders: the newest video per file name group becomes a review or a new version; older files move to a subfolder, nothing is deleted or overwritten.
+
+### In Premiere Pro
+
+<img src="docs/screenshots/premiere-panel.png" width="400" alt="Premiere Pro panel: comments of the linked review, synced as sequence markers">
+
+- Optional panel for Premiere Pro that places comments as sequence markers and leaves your own markers alone.
+- The panel can be switched between English and German.
+
+### Settings
+
+![Administration settings of Clipproof](docs/screenshots/admin-settings.png)
+
 - English and German (informal `de`, formal `de_DE`, chosen per review).
+
+The screenshots show Clipproof 0.1.0 on Nextcloud 34 with a generated demo clip and made up names. The Premiere Pro panel is shown in a browser with the same demo data, outside Premiere.
 
 ## Requirements
 

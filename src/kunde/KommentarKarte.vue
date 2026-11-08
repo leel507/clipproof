@@ -37,8 +37,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { getCanonicalLocale } from '@nextcloud/l10n'
 import Symbol from '../gemeinsam/Symbol.vue'
 import type { Kommentar } from '../gemeinsam/typen'
+import { zeitpunkt as zeitpunktText } from '../lib/zeitpunkt'
 import type { Texte } from './texte'
 
 const props = defineProps<{
@@ -56,20 +58,10 @@ defineEmits<{
 }>()
 
 const besitzer = computed(() => props.kommentar.autorTyp === 'besitzer')
-const initial = computed(() => (besitzer.value ? 'S' : (props.kommentar.autor.trim()[0] ?? '?').toUpperCase()))
+const initial = computed(() => ((besitzer.value ? props.t.vonBesitzer : props.kommentar.autor).trim()[0] ?? '?').toUpperCase())
 
-/** „vor 5 Min.“, „heute 14:02“, sonst Datum. */
-const zeitpunkt = computed(() => {
-	const iso = props.kommentar.abgesendetAm ?? props.kommentar.erstelltAm
-	if (!iso) return ''
-	const d = new Date(iso)
-	const min = Math.round((Date.now() - d.getTime()) / 60000)
-	if (min < 1) return 'gerade eben'
-	if (min < 60) return `vor ${min} Min.`
-	const zeit = d.toLocaleTimeString('de-DE', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit' })
-	const heute = new Date().toDateString() === d.toDateString()
-	return heute ? `heute ${zeit}` : `${d.toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit' })} ${zeit}`
-})
+/** „vor 5 Minuten“, „heute 14:02“, sonst Datum; in der Sprache der Seite. */
+const zeitpunkt = computed(() => zeitpunktText(props.kommentar.abgesendetAm ?? props.kommentar.erstelltAm, getCanonicalLocale()))
 </script>
 
 <style scoped>
