@@ -19,10 +19,19 @@ Ohne Gewähr, Pflege nach Möglichkeit.]]></description>
     <licence>agpl</licence>
     <author>Schauties Media</author>
     <namespace>Clipproof</namespace>
+    <documentation>
+        <user>https://github.com/leel507/clipproof#readme</user>
+    </documentation>
     <category>multimedia</category>
     <website>https://github.com/leel507/clipproof</website>
     <bugs>https://github.com/leel507/clipproof/issues</bugs>
     <repository type="git">https://github.com/leel507/clipproof.git</repository>
+    <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/client-review.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/owner-view.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/export-markers.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/files-release.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/premiere-panel.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/admin-settings.png</screenshot>
     <dependencies>
         <php min-version="8.3"/>
         <nextcloud min-version="33" max-version="34"/>
@@ -31,6 +40,11 @@ Ohne Gewähr, Pflege nach Möglichkeit.]]></description>
         <job>OCA\Clipproof\BackgroundJob\StuendlichJob</job>
         <job>OCA\Clipproof\BackgroundJob\OrdnerJob</job>
     </background-jobs>
+    <commands>
+        <command>OCA\Clipproof\Command\Anlegen</command>
+        <command>OCA\Clipproof\Command\Pruefen</command>
+        <command>OCA\Clipproof\Command\Version</command>
+    </commands>
     <settings>
         <admin>OCA\Clipproof\Settings\Admin</admin>
     </settings>
@@ -40,9 +54,4 @@ Ohne Gewähr, Pflege nach Möglichkeit.]]></description>
             <route>clipproof.page.index</route>
         </navigation>
     </navigations>
-    <commands>
-        <command>OCA\Clipproof\Command\Anlegen</command>
-        <command>OCA\Clipproof\Command\Pruefen</command>
-        <command>OCA\Clipproof\Command\Version</command>
-    </commands>
 </info>
