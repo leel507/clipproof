@@ -15,7 +15,7 @@ No warranty, maintained when possible.]]></description>
 Braucht H.264-Proxys mit konstanter Bildrate. Kein Umrechnen auf dem Server.
 
 Ohne Gewähr, Pflege nach Möglichkeit.]]></description>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <licence>agpl</licence>
     <author>Schauties Media</author>
     <namespace>Clipproof</namespace>
@@ -34,7 +34,7 @@ Ohne Gewähr, Pflege nach Möglichkeit.]]></description>
     <screenshot>https://raw.githubusercontent.com/leel507/clipproof/main/docs/screenshots/admin-settings.png</screenshot>
     <dependencies>
         <php min-version="8.3"/>
-        <nextcloud min-version="33" max-version="34"/>
+        <nextcloud min-version="33" max-version="35"/>
     </dependencies>
     <background-jobs>
         <job>OCA\Clipproof\BackgroundJob\StuendlichJob</job>

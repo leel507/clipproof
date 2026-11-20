@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.1
+
+- Compatible with Nextcloud 35.
+
+## 0.1.0
 
 First public release.
 

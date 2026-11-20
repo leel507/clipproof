@@ -15,7 +15,7 @@ cd "$(dirname "$0")/.."
 SCHLUESSEL=$(cd "${1:?Ordner mit clipproof.key und clipproof.crt fehlt}" && pwd)
 for d in clipproof.key clipproof.crt; do [ -f "$SCHLUESSEL/$d" ] || { echo "Fehlt: $SCHLUESSEL/$d"; exit 1; }; done
 openssl x509 -in "$SCHLUESSEL/clipproof.crt" -noout -subject | grep -q "CN *= *clipproof" || { echo "Zertifikat ist nicht für clipproof ausgestellt"; exit 1; }
-NC=nextcloud:34.0.5-apache@sha256:5cd0788a5c7e0374256939dd86fefa34160ae03730cb28246d16939eacfd4c08
+NC=nextcloud:35.0.3-apache@sha256:f22d1dd63844bd15bbf6c2019149653c3d1c775ba48b173b56c3c6ad5f386196
 VERSION=$(sed -nE 's#.*<version>([^<]+)</version>.*#\1#p' appinfo/info.xml)
 DATEI="dist/clipproof-$VERSION.tar.gz"
 
